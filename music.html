@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Personal Soundtrack</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #3a3a5c);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+      animation: fadeIn 2s ease;
+      max-width: 750px;
+      width: 100%;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #ffb6c1;
+      animation: slideDown 1s ease;
+    }
+
+    p.playful-line {
+      font-size: 1rem;
+      color: #d3d3f3;
+      margin-bottom: 20px;
+      font-style: italic;
+      animation: fadeInUp 1.5s ease;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      animation: fadeInUp 2s ease;
+    }
+
+    li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      padding: 10px 15px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      transition: transform 0.4s ease, background 0.4s ease;
+      animation: float 6s ease-in-out infinite alternate;
+    }
+
+    li:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    li:hover {
+      transform: scale(1.07);
+      background: rgba(255, 182, 193, 0.2);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 13px 26px;
+      background: #ff69b4;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .button:hover {
+      background: #ff85c1;
+      box-shadow: 0 0 15px #ffc0cb;
+      transform: scale(1.05);
+    }
+
+    .spotify-embed {
+      margin-top: 25px;
+      animation: fadeIn 2s ease;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .tease-line {
+      font-size: 0.95rem;
+      color: #aaa;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-style: italic;
+      animation: fadeIn 2.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-40px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>🎵 Let Me Be Your Therapist (Music Album)</h2>
+    <p class="playful-line">No need to overthink... these tracks already know what you're feeling. 🫶</p>
+
+    <ul>
+      <li>The Weeknd – Call Out My Name</li>
+      <li>The Weeknd – After Hours</li>
+      <li>Chase Atlantic – Swim</li>
+      <li>Chase Atlantic – Into It</li>
+      <li>Chase Atlantic – OhMami</li>
+      <li>Taylor Swift – Lover</li>
+      <li>Taylor Swift – August</li>
+      <li>Taylor Swift – Enchanted</li>
+    </ul>
+
+    <p class="tease-line">Ahh, feel that? Yeah, that’s the emotional uppercut. Now do the only right thing — unwrap the surprise and dive into your soft spot: Spotify." 💌🎶</p>
+
+    <div class="spotify-embed">
+      <!-- Replace this link with your own playlist if needed -->
+      <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXdPec7aLTmlC?utm_source=generator" width="100%" height="380"
+        frameborder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+    </div>
+
+    <a href="photos.html" class="button">📸 21 Years, 21 Photos, 21... Ughh!! Let's Wait for the Seoul</a>
+  </div>
+</body>
+
+</html>

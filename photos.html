@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21 Snapshots of Chaos & Charm 📸</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #3e3c61, #1f1d2b);
+      color: #fff;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #ffb6c1;
+      text-align: center;
+      margin-bottom: 10px;
+      animation: fadeInDown 1.2s ease;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #d3d3f3;
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeIn 2s ease;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      animation: fadeInUp 2s ease;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      opacity: 0;
+      animation: slideFade 1s ease forwards;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 15px #ffb6c1;
+    }
+
+    .gallery img:nth-child(even) {
+      animation-delay: 0.2s;
+    }
+
+    .gallery img:nth-child(odd) {
+      animation-delay: 0.4s;
+    }
+
+    .button {
+      margin-top: 40px;
+      padding: 12px 24px;
+      background: #ff69b4;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #ff69b4;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .button:hover {
+      background: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h2>📸 21 Snapshots of Chaos, Charm & "Wait–Did-I-Really-Do-That?"</h2>
+  <p>No deep captions. Just frozen moments. And maybe... a Seoulmate hidden in one of them. 👀💗</p>
+
+  <div class="gallery">
+    <!-- Replace src with your actual image paths -->
+    <img src="Photos/95837590f0c63166f5110cf791bf7f48[1].jpg" alt="Memory 1">
+    <img src="Photos/IMG20240520142029[1].jpg" alt="Memory 2">
+    <img src="Photos/IMG20241227124036[1].jpg" alt="Memory 3">
+    <img src="Photos/IMG20241227132619[1].jpg" alt="Memory 4">
+    <img src="Photos/IMG20241227132758.jpg" alt="Memory 5">
+    <img src="Photos/IMG20241227133005.jpg" alt="Memory 6">
+    <img src="Photos/IMG20241227135029_BURST001[1].jpg" alt="Memory 7">
+    <img src="Photos/IMG20241227135041_BURST001[1].jpg" alt="Memory 8">
+    <img src="Photos/IMG20241227135104_BURST001_35301113.jpg" alt="Memory 9">
+    <img src="Photos/IMG20241227135104_BURST001_35301113.jpg" alt="Memory 10">
+    <img src="Photos/IMG20241227135123_BURST003_35301107.jpg" alt="Memory 11">
+    <img src="Photos/IMG20241227135133_BURST000_COVER.jpg" alt="Memory 12">
+    <img src="Photos/IMG20241227135512_BURST001[1].jpg" alt="Memory 13">
+    <img src="Photos/IMG20241227141802.jpg" alt="Memory 14">
+    <img src="Photos/IMG20241227142403.jpg" alt="Memory 15">
+    <img src="Photos/IMG20241227142443.jpg" alt="Memory 16">
+    <img src="Photos/IMG20241227142450_BURST001_35302026.jpg" alt="Memory 17">
+    <img src="Photos/IMG20241227142610_BURST001[1].jpg" alt="Memory 18">
+    <img src="Photos/IMG20241227150447_BURST003_35301967.jpg" alt="Memory 19">
+    <img src="Photos/IMG20241227150817_BURST002_35301877.jpg" alt="Memory 20">
+    <img src="Photos/IMG20241227150904_BURST009_35297339.jpg" alt="Memory 21">
+  </div>
+
+  <a href="card.html" class="button">💌 Your Greeting Card Awaits</a>
+</body>
+
+</html>

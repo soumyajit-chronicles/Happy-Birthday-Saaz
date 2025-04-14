@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💌 A Card Just for You</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(ellipse at bottom, #ffdbe9 0%, #ffb6d5 50%, #ffa6c5 100%);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: floatUp 10s linear infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        bottom: -10px;
+        opacity: 0;
+        transform: translateX(0) scale(0.6) rotate(45deg);
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        bottom: 100vh;
+        opacity: 0;
+        transform: translateX(30px) scale(1) rotate(45deg);
+      }
+    }
+
+    .card-wrapper {
+      perspective: 1500px;
+      animation: entrance 1.5s ease forwards, pulse 4s ease-in-out infinite;
+      z-index: 2;
+    }
+
+    @keyframes entrance {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.02);
+      }
+    }
+
+    .card {
+      width: 360px;
+      height: 620px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1.5s ease;
+      cursor: pointer;
+    }
+
+    .card.clicked {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-front {
+      background: linear-gradient(145deg, #ff7cbf, #ffc1e3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      color: white;
+      font-size: 2.2rem;
+      padding: 20px;
+      text-align: center;
+      border: 2px solid #fff;
+      box-shadow: 0 0 20px #fff5;
+    }
+
+    .card-front h2 {
+      text-shadow: 0 0 10px #ffffff;
+      animation: glowText 2s infinite ease-in-out;
+    }
+
+    @keyframes glowText {
+      0%, 100% {
+        text-shadow: 0 0 10px #fff;
+      }
+
+      50% {
+        text-shadow: 0 0 20px #ff7cbf;
+      }
+    }
+
+    .card-front p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      margin-top: 10px;
+    }
+
+    .card-back {
+      background: white;
+      transform: rotateY(180deg);
+      padding: 30px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid #ff6fad;
+      overflow-y: auto;
+    }
+
+    .card-back p {
+      font-size: 1.05rem;
+      color: #444;
+      line-height: 1.7;
+    }
+
+    .card-back a {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff5caa;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(255, 92, 170, 0.5);
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .card-back a:hover {
+      background: #ff74bd;
+      transform: scale(1.05);
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '-' + (Math.random() * 20) + 'px';
+      heart.style.animationDuration = (6 + Math.random() * 5) + 's';
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Music -->
+  <audio id="bg-music" loop>
+    <source src="Magical-Moments-chosic.com_.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Card -->
+  <div class="card-wrapper">
+    <div class="card" id="flip-card">
+      <div class="card-front">
+        <h2>💌 Open Me...</h2>
+        <p>Just don’t fall for me after this. No promises. 😎</p>
+      </div>
+      <div class="card-back">
+        <p>
+          Happy Birthday to someone who doesn’t even try to be unforgettable — yet still is.<br>
+          You’re not just aging like fine wine, you’re rewriting the whole winery rulebook.<br><br>
+
+          This isn’t one of those “overhyped” wishes.<br>
+          Just a quiet reminder that the world got a little more interesting the day you showed up.<br>
+          No dramatic fireworks — just facts.<br><br>
+
+          You deserve peace that feels like your favorite playlist, joy that sneaks up on you,<br>
+          and people who get how rare your vibe is — even if you don’t always flaunt it.<br><br>
+
+          Enjoy every bit of today — because it’s yours.<br>
+          And don’t worry, I’m still that guy who’ll pull your leg the second you get too soft. 😏<br>
+          But yeah… if today feels special, maybe it’s ‘cause you are. 💫
+        </p>
+        <a href="joke.html">😆 One Last Thing...</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Flip & Music Trigger -->
+  <script>
+    const card = document.getElementById('flip-card');
+    const music = document.getElementById('bg-music');
+    let played = false;
+
+    card.addEventListener('click', () => {
+      card.classList.toggle('clicked');
+      if (!played) {
+        music.play();
+        played = true;
+      }
+    });
+  </script>
+</body>
+
+</html>

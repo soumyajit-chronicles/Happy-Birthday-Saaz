@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Don't worry, it was just virtual — real wala bhi ayega 💖</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;700&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to top right, #ff69b4, #ffc0cb);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+      animation: fadeInDown 2s ease;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      padding: 0 20px;
+      animation: fadeInUp 2s ease 1s forwards;
+      opacity: 0;
+    }
+
+    .confetti {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('confetti.gif') center center/cover no-repeat;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .button {
+      margin-top: 30px;
+      padding: 12px 24px;
+      background: #fff;
+      color: #ff69b4;
+      border: none;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .button:hover {
+      background: #ffb6c1;
+      color: #fff;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .floating-hearts {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .heart {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Heart_coraz%C3%B3n.svg/1200px-Heart_coraz%C3%B3n.svg.png') no-repeat center/contain;
+      animation: floatHearts 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    .heart:nth-child(1) {
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .heart:nth-child(2) {
+      left: 30%;
+      animation-delay: 2s;
+    }
+
+    .heart:nth-child(3) {
+      left: 50%;
+      animation-delay: 4s;
+    }
+
+    .heart:nth-child(4) {
+      left: 70%;
+      animation-delay: 6s;
+    }
+
+    .heart:nth-child(5) {
+      left: 90%;
+      animation-delay: 8s;
+    }
+
+    @keyframes floatHearts {
+      0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateY(0) scale(0.5);
+      }
+
+      50% {
+        opacity: 1;
+      }
+
+      100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateY(-100px) scale(1.2);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="confetti"></div>
+
+  <h1>🎉 Don't worry, it was just virtual — real wala bhi ayega 💖</h1>
+  <p>
+    You cracked the code, sliced the cake, and unlocked a celebration that’s all about you.<br>
+    This isn’t just a page — it’s a secret project, carefully crafted by someone who knows how to make birthdays
+    unforgettable. So go ahead, kick back, take it all in, and maybe ask yourself...<br>
+    Who’s behind this little masterpiece, making sure your day is as legendary as you are? 🎂💌😉
+  </p>
+
+  <a href="music.html" class="button">💫 Ready for your next surprise?</a>
+
+  <div class="floating-hearts">
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+  </div>
+
+</body>
+
+</html>
